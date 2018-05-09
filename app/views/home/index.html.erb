@@ -1,0 +1,18 @@
+<div class="header header--home">
+
+  <h1 class="heading heading--primary">
+    Citations
+  </h1>
+  <div class="btn">
+    <%= link_to 'Add citation', new_citation_path %>
+  </div>
+</div>
+
+<section class="section-citations">
+  <div class="citations">
+    <% @citations.each do |citation| %>
+      <div class="citations__box">
+        <%= citation.text %>
+      </div>
+      <% end %>
+</section>

@@ -1,0 +1,32 @@
+<section class="section-new">
+  <div class="header header--form">
+    <div class="form">
+      <h2 class="heading heading--secondary">New Citation</h2>
+      <%= form_with scope: :citation, url: citations_path, local: true do |form| %>
+
+        <% if @citation.errors.any? %>
+          <div class="error">
+            <h2>
+              <%= pluralize(@citation.errors.count, "error") %> prohibited this citation from being saved:
+            </h2>
+            <ul>
+              <% @citation.errors.full_messages.each do |msg| %>
+                <li>
+                  <%= msg %>
+                </li>
+                <% end %>
+            </ul>
+          </div>
+          <% end %>
+
+            <div class="form__input">
+              <%= form.text_area :text, cols: "10", rows: "7"  %>
+            </div>
+
+            <div class="btn">
+              <%= form.submit %>
+            </div>
+            <% end %>
+    </div>
+  </div>
+</section>
