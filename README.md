@@ -9,4 +9,5 @@ heroku run rake db:migrate
 * Deployment instructions
 
 heroku create
-git config --list | grep heroku
+git push heroku master
+heroku open
